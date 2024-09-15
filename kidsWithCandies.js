@@ -29,7 +29,7 @@ Output: [true,false,true]
 */
 
 let kidsWithCandies = function(candies, extraCandies) {
-  const temp = Math.max(...candies);
+  const temp = Math.max(...candies); //use the spread operator to grab the values in the array and then use the Math.max method to find the max value
   let great = false;
   let greatArray = [];
   for (let i = 0; i < candies.length; i++) {
