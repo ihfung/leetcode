@@ -38,3 +38,7 @@ def find_difference(nums1, nums2)
     [diff1.to_a, diff2.to_a] #to_a is a method that converts a set to an array
 
 end
+
+puts find_difference([1,2,3], [2,4,6]) # [[1, 3], [4, 6]]
+puts find_difference([1,2,3,3], [1,1,2,2]) # [[3], []]
+puts find_difference([1,2,3,3], [1,1,2,2,3]) # [[], []]
