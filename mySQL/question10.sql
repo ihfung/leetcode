@@ -93,4 +93,5 @@ on a1.machine_id = a2.machine_id --to makes sure we are comparing the same machi
 and a1.process_id = a2.process_id --to makes sure we are comparing the same process
 and a1.activity_type = 'start' --to makes sure we are comparing the start and end of the same process
 and a2.activity_type = 'end' --to makes sure we are comparing the start and end of the same process
-group by a1.machine_id; --group by machine_id to get the average processing time for each machine
+group by a1.machine_id; --group by machine_id will make sure get the average processing time for each machine
+
