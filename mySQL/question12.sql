@@ -103,6 +103,41 @@
 -- Alex did not attend any exams.
 -- John attended the Math exam 1 time, the Physics exam 1 time, and the Programming exam 1 time.
 
+create TABLE students (
+    student_id int primary key,
+    student_name varchar(100)
+);
+
+create TABLE subjects (
+    subject_name varchar(100) primary key
+);
+
+create TABLE examinations (
+    student_id int,
+    subject_name varchar(100)
+);
+
+insert into students (student_id, student_name) values (1, 'Alice');
+insert into students (student_id, student_name) values (2, 'Bob');
+insert into students (student_id, student_name) values (13, 'John');
+insert into students (student_id, student_name) values (6, 'Alex');
+
+insert into subjects (subject_name) values ('Math');
+insert into subjects (subject_name) values ('Physics');
+insert into subjects (subject_name) values ('Programming');
+
+insert into examinations (student_id, subject_name) values (1, 'Math');
+insert into examinations (student_id, subject_name) values (1, 'Physics');
+insert into examinations (student_id, subject_name) values (1, 'Programming');
+insert into examinations (student_id, subject_name) values (2, 'Programming');
+insert into examinations (student_id, subject_name) values (1, 'Physics');
+insert into examinations (student_id, subject_name) values (1, 'Math'); 
+insert into examinations (student_id, subject_name) values (13, 'Math');
+insert into examinations (student_id, subject_name) values (13, 'Programming');
+insert into examinations (student_id, subject_name) values (13, 'Physics');
+insert into examinations (student_id, subject_name) values (2, 'Math');
+insert into examinations (student_id, subject_name) values (1, 'Math');
+
 
 SELECT
     st.student_id,              -- We want each unique student ID
@@ -127,3 +162,4 @@ ORDER BY
 
 
 --group by is really just grouping the results that share the same values in the specified columns. like the student alice where it was grouped by the student_id and student_name and subject name which is 1 and alice and subject name. 
+--the cross join is like a cartesian product where it joins every row from the first table with every row from the second table.
