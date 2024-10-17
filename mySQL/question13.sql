@@ -65,3 +65,6 @@ group by b.managerId
 having count(*) >= 5;
 
 --joining the same table is like creating a temp table with the same table and then joining the two tables together.
+--the first table is the employee table and the second table is the employee table with the alias b
+--the join condition is that the id of the first table is equal to the managerId of the second table
+--group by the managerId which getting all values that share the same managerId
