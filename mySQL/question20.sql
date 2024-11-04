@@ -45,6 +45,22 @@
 -- +----------+---------+-------------+----------------+--------------------+-----------------------+
 
 
+create table transactions (
+    id int primary key,
+    country varchar(255),
+    state enum('approved', 'declined'),
+    amount int,
+    trans_date date
+)
+
+insert into transactions (id, country, state, amount, trans_date) values
+(121, 'US', 'approved', 1000, '2018-12-18'),
+(122, 'US', 'declined', 2000, '2018-12-19'),
+(123, 'US', 'approved', 2000, '2019-01-01'),
+(124, 'DE', 'approved', 2000, '2019-01-07');
+
+
+
 select date_format(trans_date, '%y-%m') as month, country,
 count(*) as trans_count,
 sum(state = 'approved') as approved_count,
