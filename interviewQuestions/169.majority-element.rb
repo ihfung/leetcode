@@ -44,7 +44,7 @@
 # @return {Integer}
 
 def majority_element(nums)
-    # Boyer-Moore Voting Algorithm
+    
     count = 0
     candidate = nil
     #we iterate through the array by using each (nums.each) and we assign the value of num to the variable num.
