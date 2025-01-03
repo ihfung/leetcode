@@ -47,13 +47,13 @@ def majority_element(nums)
     # Boyer-Moore Voting Algorithm
     count = 0
     candidate = nil
-    
-    nums.each do |num| #we iterate through the array by using each (nums.each) and we assign the value of num to the variable num.
+    #we iterate through the array by using each (nums.each) and we assign the value of num to the variable num.
+    nums.each do |num|
         if count == 0
             candidate = num
         end
-        
-        count += (num == candidate) ? 1 : -1 #if the number is the same as the candidate, we add 1 to the count, otherwise we subtract 1.
+        #if the number is the same as the candidate, we add 1 to the count, otherwise we subtract 1.
+        count += (num == candidate) ? 1 : -1 
     end
     
     candidate #return the candidate
