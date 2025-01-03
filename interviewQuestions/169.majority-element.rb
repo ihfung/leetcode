@@ -42,6 +42,7 @@
 # @lc code=start
 # @param {Integer[]} nums
 # @return {Integer}
+
 def majority_element(nums)
     # Boyer-Moore Voting Algorithm
     count = 0
