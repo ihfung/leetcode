@@ -66,3 +66,29 @@ puts majority_element(nums)
 nums = [2,2,1,1,1,2,2]
 puts majority_element(nums)
 
+
+# How it works:
+# The algorithm maintains a count and a candidate
+# When count reaches 0, we pick a new candidate
+# If we see the same number as candidate, we increment count
+# If we see a different number, we decrement count
+# The majority element will always be the final candidate because it appears more than n/2 times
+# This works because:
+# If an element is truly the majority (appears > n/2 times), it will always win the "voting" process
+# All other elements combined can't outnumber the majority element, so it will survive as the final candidate
+# The previous solution worked but was inefficient because it was counting occurrences for each number, leading to O(n²) time complexity. This new solution is both more elegant and more efficient.
+
+# The code uses something called the Boyer-Moore Voting Algorithm, but let's understand it with a real-world analogy:
+# Imagine you're in a room full of people voting for either Team Red or Team Blue:
+# Every time you see someone from Team Red, they get +1 point
+# Every time you see someone from Team Blue, they get -1 point
+# If the points reach 0, you pick the next person you see as the new team to track
+
+# Why this works:
+# Since we know there's always a majority element (appears more than n/2 times)
+# It's impossible for other numbers to "outvote" the majority number
+# Even if we switch candidates a few times, the majority element will always win in the end
+# It's like having a room where you know Team Red has more people than all other teams combined - no matter how you count, Team Red will always win the final count!
+# The code is just keeping track of:cl
+# 1. Who's currently winning (candidate)
+# By how many votes (count)
