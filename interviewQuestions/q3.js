@@ -11,9 +11,13 @@
 
 var removeDuplicates = function(nums) {
     let k = 2;
+    //iterate from the 3rd elemnent 
     for (let i = 2; i < nums.length; i++){
+        //if the current element is not the same as the element 2 positions before
         if(nums[i] !== nums[k - 2]){
+            //add the current element to the result array
             nums[k] = nums[i];
+            //increment the result array index
             k++
         }
     }
